@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Shop</title>
+  <!-- Подключение Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .carousel-image {
+      max-height: 200px; /* Установите желаемую максимальную высоту */
+      object-fit: cover; /* Обрезать изображение, чтобы оно заполнило всю доступную область */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Anime Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Main</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.html">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sales.html">Sales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="QUIZ!.html">QUIZ!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registration.html">Registration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Carousel с топ 3 популярными продуктами -->
+  <div id="carouselPopular" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselPopular" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselPopular" data-slide-to="1"></li>
+      <li data-target="#carouselPopular" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="img/top1.jpg" class="d-block w-100 carousel-image" alt="Popular products">
+        <div class="carousel-caption">
+          <h3>Popular products</h3>
+          <p>Jujutsu Kaisen</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/top2.jpg" class="d-block w-100 carousel-image" alt="Popular products">
+        <div class="carousel-caption">
+          <h3>Popular products</h3>
+          <p>Steins Gate</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/top3.jpg" class="d-block w-100 carousel-image" alt="Popular products">
+        <div class="carousel-caption">
+          <h3>Popular products</h3>
+          <p>SAO</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselPopular" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselPopular" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="container mt-5 text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="dropdown d-inline-block mx-auto">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" data-bs-toggle="dropdown" aria-expanded="false">
+            Filter
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://youtu.be/dQw4w9WgXcQ?si=sYkJh1PCSDfv8g4f" target="_blank">anime</a></li>
+            <li><a class="dropdown-item" href="https://youtu.be/dQw4w9WgXcQ?si=sYkJh1PCSDfv8g4f" target="_blank">manga</a></li>
+            <li><a class="dropdown-item" href="https://youtu.be/dQw4w9WgXcQ?si=sYkJh1PCSDfv8g4f" target="_blank">novel</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Cards с anime вещами -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+          <img src="img/img1.jpg" class="card-img-top" alt="Anime Item">
+          <div class="card-body">
+            <h5 class="card-title">Naruto</h5>
+            <p>Price: $25</p>
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#first" aria-expanded="false" aria-controls="collapseWidthExample">
+                Some Info
+              </button>
+            </p>
+            <div style="min-height: 10px;">
+              <div class="collapse width" id="first">
+                <div class="card card-body" style="width: 320px;">
+                  The Village Hidden in the Leaves is home to the stealthiest ninja. But twelve years earlier, a fearsome Nine-tailed Fox terrorized the village before it was subdued and its spirit sealed within the body of a baby boy.
+                </div>
+              </div>
+            </div>
+            <a href="https://youtu.be/dQw4w9WgXcQ?si=sYkJh1PCSDfv8g4f" target="_blank" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+          <img src="img/img2.jpg" class="card-img-top" alt="Anime Item">
+          <div class="card-body">
+            <h5 class="card-title">Bleach</h5>
+            <p>Price: $25</p>
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#second" aria-expanded="false" aria-controls="collapseWidthExample">
+                Some Info
+              </button>
+            </p>
+            <div style="min-height: 10px;">
+              <div class="collapse width" id="second">
+                <div class="card card-body" style="width: 320px;">
+                  Ichigo Kurosaki has always been able to see ghosts, but this ability doesn't change his life nearly as much as his close encounter with Rukia Kuchiki, a Soul Reaper and member of the mysterious Soul Society.-it's Ichigo's job to protect the innocent from Hollows and help the spirits themselves find peace.
+                </div>
+              </div>
+            </div>
+            <a href="https://youtu.be/dQw4w9WgXcQ?si=sYkJh1PCSDfv8g4f" target="_blank" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+          <img src="img/img3.jpg" class="card-img-top" alt="Anime Item">
+          <div class="card-body">
+            <h5 class="card-title">One Piece</h5>
+            <p>Price: $25</p>
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#third" aria-expanded="false" aria-controls="collapseWidthExample">
+                Some Info
+              </button>
+            </p>
+            <div style="min-height: 10px;">
+              <div class="collapse width" id="third">
+                <div class="card card-body" style="width: 320px;">
+                  As a child, Monkey D. Luffy was inspired to become a pirate by listening to the tales of the buccaneer "Red-Haired" Shanks. But Luffy's life changed when he accidentally ate the Gum-Gum Devil Fruit and gained the power to stretch like rubber ... .one guy alone in a rowboat, in search of the legendary "One Piece," said to be the greatest treasure in the world...
+                </div>
+              </div>
+            </div>
+            <a href="https://youtu.be/dQw4w9WgXcQ?si=sYkJh1PCSDfv8g4f" target="_blank" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+          <img src="img/img4.jpg" class="card-img-top" alt="Anime Item">
+          <div class="card-body">
+            <h5 class="card-title">One Punch Man</h5>
+            <p>Price: $25</p>
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#forth" aria-expanded="false" aria-controls="collapseWidthExample">
+                Some Info
+              </button>
+            </p>
+            <div style="min-height: 10px;">
+              <div class="collapse width" id="forth">
+                <div class="card card-body" style="width: 320px;">
+                  Saitama is a hero who started his career from nothing to do. After three years of special training, he has become so strong that he can defeat enemies with a single blow. Now Saitama, along with his cyborg apprentice Genos, is ready to officially work as a hero for the Hero Association.
+                </div>
+              </div>
+            </div>
+            <a href="https://youtu.be/dQw4w9WgXcQ?si=sYkJh1PCSDfv8g4f" target="_blank" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+          <img src="img/img5.jpg" class="card-img-top" alt="Anime Item">
+          <div class="card-body">
+            <h5 class="card-title">Tokyo Ghoul</h5>
+            <p>Price: $25</p>
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#fifth" aria-expanded="false" aria-controls="collapseWidthExample">
+                Some Info
+              </button>
+            </p>
+            <div style="min-height: 10px;">
+              <div class="collapse width" id="fifth">
+                <div class="card card-body" style="width: 320px;">
+                  Shy Ken Kaneki is thrilled to go on a date with the beautiful Rize. But it turns out that she’s only interested in his body?eating it, that is. When a morally questionable rescue transforms him into the first half-human half-Ghoul hybrid, Ken is drawn into the dark and violent world of Ghouls, which exists alongside our own.
+                </div>
+              </div>
+            </div>
+            <a href="https://youtu.be/dQw4w9WgXcQ?si=sYkJh1PCSDfv8g4f" target="_blank" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="card">
+          <img src="img/img6.jpg" class="card-img-top" alt="Anime Item">
+          <div class="card-body">
+            <h5 class="card-title">Attack on Titan</h5>
+            <p>Price: $25</p>
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#sixth" aria-expanded="false" aria-controls="collapseWidthExample">
+                Some Info
+              </button>
+            </p>
+            <div style="min-height: 10px;">
+              <div class="collapse width" id="sixth">
+                <div class="card card-body" style="width: 320px;">
+                  The human world has fallen to the crushing might of the Titans. Having sacrificed their freedom, mankind took refuge in high-walled cities, hoping to keep the survivors safe. But one terrible day, a colossal Titan appeared, exceeding the size of even the city walls. And fragile hope was crushed to dust. Once again, the desperate battle for survival began.
+                </div>
+              </div>
+            </div>
+            <a href="https://youtu.be/dQw4w9WgXcQ?si=sYkJh1PCSDfv8g4f" target="_blank" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="gallery">
+      <div class="gallery_board">
+        <h1>ANIME GALLERY</h1>
+        <img class="image" data-index="0" data-status="inactive" src="img/img1.jpg" />
+        <img class ="image" data-index="1" data-status="inactive" src="img/img2.jpg"./>
+        <img class ="image" data-index="2" data-status="inactive" src="img/img3.jpg"./>
+        <img class ="image" data-index="3" data-status="inactive" src="img/img4.jpg"./>
+        <img class ="image" data-index="4" data-status="inactive" src="img/img5.jpg"./>
+        <img class ="image" data-index="5" data-status="inactive" src="img/img6.jpg"./>
+        <img class ="image" data-index="6" data-status="inactive" src="img/img7.jpg"./>
+        <img class ="image" data-index="7" data-status="inactive" src="img/img8.jpg"./>
+        <img class ="image" data-index="8" data-status="inactive" src="img/img9.jpg"./>
+        <img class ="image" data-index="9" data-status="inactive" src="img/img10.jpg"./>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подключение Bootstrap JavaScript и jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></script>
+</body>
+</html>

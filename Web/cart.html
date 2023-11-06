@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime list to watch</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Anime Shop</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Main</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sales.html">Sales</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="QUIZ!.html">QUIZ!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registration.html">Registration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Bootstrap Cards с anime вещами -->
+    <div class="container mt-5">
+      <div class="col">
+        <h1 class="text-primary mb-3">Anime List to watch</h1>
+        <form id="todo-form" class="form-inline mb-3">
+          <input
+            type="text"
+            id="todo-input"
+            class="form-control mr-2"
+            placeholder="ex: One Piece "
+            required
+          />
+          <button type="submit" class="btn btn-primary">Add task</button>
+        </form>
+        <ul id="todo-list" class="list-group">
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            <span>One piece 1045 episode</span
+            ><span class="ml-2 text-muted"> (added at 2:10:11 AM)</span
+            ><button class="btn btn-danger btn-sm">Delete</button>
+          </li>
+          <li
+            class="list-group-item d-flex justify-content-between align-items-center"
+          >
+            <span>Boko no Hero season 3</span
+            ><span class="ml-2 text-muted"> (added at 2:10:11 AM)</span
+            ><button class="btn btn-danger btn-sm">Delete</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <style>
+      #todo-list {
+        list-style-type: none;
+      }
+      .delete {
+        color: red;
+        cursor: pointer;
+      }
+    </style>
+    <!-- Подключение Bootstrap JavaScript и jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></script>
+    <script src="/todo.js"></script>
+  </body>
+</html>

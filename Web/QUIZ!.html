@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Quiz</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #gameStatsChart {
+            width: 50px;
+            height: 50px;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .list-group {
+            min-height: 150px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+        #result {
+            font-weight: bold;
+            margin-top: 20px;
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Anime Shop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Main</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sales.html">Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">QUIZ!</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registration.html">Registration</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Anime Character Sorting Quiz</h1>
+        <h5>Sort it by year of publish</h5>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Characters</h2>
+                <ul id="characters" class="list-group">
+                    <li class="list-group-item" draggable="true" ondragstart="drag(event)">Naruto Uzumaki</li>
+                    <li class="list-group-item" draggable="true" ondragstart="drag(event)">Luffy Monkey D.</li>
+                    <li class="list-group-item" draggable="true" ondragstart="drag(event)">Goku</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2>Correct Order</h2>
+                <ul id="correct-order" class="list-group" ondragover="allowDrop(event)" ondrop="drop(event)"></ul>
+                <button class="btn btn-danger" id="clear-order" onclick="clearOrder()">Clear Order</button>
+            </div>
+        </div>
+        <p id="result"></p>
+        <canvas id="gameStatsChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Initialize Chart.js with an empty chart
+        const ctx = document.getElementById('gameStatsChart').getContext('2d');
+        const gameStatsChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Played', 'Won'],
+                datasets: [{
+                    data: [0, 0],
+                    backgroundColor: ['lightblue', 'lightgreen'],
+                }],
+            },
+        });
+
+        // Function to update the pie chart
+        function updateChart(played, won) {
+            gameStatsChart.data.datasets[0].data = [played, won];
+            gameStatsChart.update();
+        }
+    </script>
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.innerText);
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData("text");
+            const element = document.createElement("li");
+            element.innerText = data;
+            element.className = "list-group-item";
+            event.target.appendChild(element);
+
+            // Hide the element in the "Characters" list
+            const charactersList = document.getElementById('characters');
+            const characters = charactersList.getElementsByTagName('li');
+            for (let i = 0; i < characters.length; i++) {
+                if (characters[i].innerText === data) {
+                    characters[i].style.display = 'none';
+                    break;
+                }
+            }
+
+            // Check if the order is correct
+            const correctOrder = ['Goku', 'Naruto Uzumaki', 'Luffy Monkey D.'];
+            const currentOrder = Array.from(document.getElementById('correct-order').children).map(item => item.innerText);
+
+            if (currentOrder.length === 3){
+                if (JSON.stringify(correctOrder) === JSON.stringify(currentOrder)) {
+                    document.getElementById('result').innerText = 'Congratulations! You got it right!';
+                    updateChart(1, 1);
+                } else {
+                    document.getElementById('result').innerText = 'Oops! The order is incorrect.';
+                    updateChart(1, 0);
+                }
+            }
+        }
+
+        function clearOrder() {
+            const correctOrder = document.getElementById('correct-order');
+            while (correctOrder.firstChild) {
+                const item = correctOrder.firstChild;
+                correctOrder.removeChild(item);
+                document.getElementById('characters').appendChild(item);
+                //item.style.display = 'block'; // Show the element in the "Characters" list
+
+                // Reattach the ondragstart event handler
+                item.setAttribute("draggable", "true");
+                item.setAttribute("ondragstart", "drag(event)");
+            }
+            document.getElementById('result').innerText = '';
+        }
+    </script>
+</body>
+</html>
