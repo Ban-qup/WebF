@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Anime Quiz</title>
+    <link rel="icon" type="image/x-icon" href="img/game.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         #gameStatsChart {
@@ -90,6 +92,7 @@
         <p id="result"></p>
         <canvas id="gameStatsChart"></canvas>
     </div>
+    <audio id="myAudio" src="img/klm.mp3" controls></audio>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -168,6 +171,11 @@
             }
             document.getElementById('result').innerText = '';
         }
+    </script>
+    <script>
+        const audioElement = document.getElementById('myAudio');
+        audioElement.play();
+        audioElement.loop = true;
     </script>
 </body>
 </html>
